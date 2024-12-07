@@ -1,0 +1,188 @@
+.container {
+  padding: 30rpx;
+  background: #f7f8fc;
+  min-height: 100vh;
+}
+
+.meeting-detail {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 40rpx 30rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+/* 标题区域 */
+.header {
+  margin-bottom: 30rpx;
+}
+
+.title {
+  font-size: 40rpx;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* 基本信息区域 */
+.info-section {
+  background: #f8fafc;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-bottom: 30rpx;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  padding: 16rpx 0;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.info-row .iconfont {
+  font-size: 32rpx;
+  color: var(--primary-color);
+  margin-right: 16rpx;
+}
+
+.info-row.creator {
+  margin-top: 8rpx;
+  padding-top: 24rpx;
+  border-top: 2rpx solid rgba(0, 0, 0, 0.05);
+}
+
+.creator-avatar {
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 28rpx;
+  margin-right: 16rpx;
+}
+
+.creator-name {
+  font-size: 26rpx;
+  color: #333;
+  font-weight: 500;
+}
+
+.creator-tag {
+  font-size: 22rpx;
+  color: var(--primary-color);
+  background: rgba(var(--primary-color-rgb), 0.1);
+  padding: 4rpx 12rpx;
+  border-radius: 10rpx;
+  margin-left: 12rpx;
+}
+
+/* 活动详情区域 */
+.detail-section {
+  margin-bottom: 30rpx;
+}
+
+.detail-block {
+  background: #f8fafc;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-bottom: 20rpx;
+}
+
+.block-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 16rpx;
+  display: block;
+}
+
+.block-content {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* 参与成员区域 */
+.members-section {
+  background: #f8fafc;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-bottom: 30rpx;
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20rpx;
+  display: block;
+}
+
+.count {
+  font-size: 26rpx;
+  color: #999;
+  font-weight: normal;
+}
+
+.members-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx;
+}
+
+.member-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  border: 4rpx solid #fff;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+.empty-tip {
+  font-size: 26rpx;
+  color: #999;
+  padding: 20rpx 0;
+}
+
+/* 操作按钮区域 */
+.action-section {
+  margin-top: 40rpx;
+}
+
+.primary-btn {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 600;
+  border-radius: 44rpx;
+  margin-bottom: 20rpx;
+  border: none;
+}
+
+.primary-btn.joined {
+  background: #67c23a;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 20rpx;
+}
+
+.action-btn {
+  flex: 1;
+  height: 80rpx;
+  line-height: 78rpx;
+  font-size: 28rpx;
+  border-radius: 40rpx;
+  background: #fff;
+}
+
+.action-btn.edit {
+  color: var(--primary-color);
+  border: 2rpx solid var(--primary-color);
+}
+
+.action-btn.delete {
+  color: #f56c6c;
+  border: 2rpx solid #f56c6c;
+} 

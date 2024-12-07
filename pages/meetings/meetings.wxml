@@ -1,0 +1,55 @@
+<!--pages/meetings/meetings.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="title-section">
+      <text class="title">聚会活动</text>
+      <text class="count">{{meetings.length}}个活动</text>
+    </view>
+    <button class="publish-btn" bindtap="navigateToPublish">发布活动</button>
+  </view>
+
+  <view class="meetings-list">
+    <block wx:if="{{meetings.length > 0}}">
+      <view class="meeting-card" wx:for="{{meetings}}" wx:key="id">
+        <view class="meeting-info" bindtap="viewMeetingDetail" data-id="{{item.id}}">
+          <text class="meeting-title">{{item.title}}</text>
+          <view class="meeting-meta">
+            <view class="meta-item">
+              <text class="iconfont icon-time"></text>
+              <text>时间：{{item.date}} {{item.time}}</text>
+            </view>
+            <view class="meta-item">
+              <text class="iconfont icon-location"></text>
+              <text>地点：{{item.location}}</text>
+            </view>
+          </view>
+          <view class="meeting-desc">{{item.reason}}</view>
+        </view>
+        <view class="meeting-stats">
+          <view class="stat-item">
+            <text class="stat-count">{{item.participants.length || 0}}</text>
+            <text class="stat-label">人参加</text>
+          </view>
+          <view class="stat-item">
+            <text class="stat-count">{{item.viewCount || 0}}</text>
+            <text class="stat-label">次浏览</text>
+          </view>
+        </view>
+        <view class="action-buttons">
+          <button class="join-btn" catchtap="joinMeeting" data-id="{{item.id}}">
+            {{item.isParticipant ? '已参加' : '我要参加'}}
+          </button>
+          <block wx:if="{{isAdmin || item.creator.nickName === userInfo.nickName}}">
+            <button class="edit-btn" catchtap="editMeeting" data-id="{{item.id}}" plain>
+              编辑
+            </button>
+            <button class="delete-btn" catchtap="deleteMeeting" data-id="{{item.id}}" plain>
+              删除
+            </button>
+          </block>
+        </view>
+      </view>
+    </block>
+    <view class="empty-tip" wx:else>暂无活动</view>
+  </view>
+</view>

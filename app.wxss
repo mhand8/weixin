@@ -1,0 +1,146 @@
+/**app.wxss**/
+/* 全局样式 */
+page {
+  --primary-color: #4080ff;
+  --primary-color-rgb: 64, 128, 255;
+  --secondary-color: #6c5ce7;
+  --secondary-color-rgb: 108, 92, 231;
+  --success-color: #67c23a;
+  --warning-color: #e6a23c;
+  --danger-color: #f56c6c;
+  --text-color: #333333;
+  --text-color-secondary: #666666;
+  --border-color: #eaeaea;
+  --background-color: #f7f8fc;
+  
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+    Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei',
+    sans-serif;
+  font-size: 28rpx;
+  line-height: 1.5;
+  color: var(--text-color);
+  background: var(--background-color);
+}
+
+/* 清除按钮默认样式 */
+button {
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  text-align: left;
+  line-height: inherit;
+  overflow: visible;
+}
+
+button::after {
+  display: none;
+}
+
+/* 输入框占位符样式 */
+.input-placeholder {
+  color: #999;
+}
+
+/* 通用动画类 */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20rpx);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 通用布局类 */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 通用间距类 */
+.margin-top {
+  margin-top: 20rpx;
+}
+
+.margin-bottom {
+  margin-bottom: 20rpx;
+}
+
+.padding {
+  padding: 20rpx;
+}
+
+/* 通用文本类 */
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-secondary {
+  color: var(--secondary-color);
+}
+
+.text-success {
+  color: var(--success-color);
+}
+
+.text-warning {
+  color: var(--warning-color);
+}
+
+.text-danger {
+  color: var(--danger-color);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+/* 通用卡片样式 */
+.card {
+  background: #fff;
+  border-radius: 12rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.container {
+  padding: 20rpx;
+  box-sizing: border-box;
+} 

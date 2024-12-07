@@ -1,0 +1,79 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 登录区域 -->
+  <block wx:if="{{!hasUserInfo}}">
+    <view class="login-container">
+      <view class="header">
+        <text class="title">欢迎加入</text>
+        <text class="subtitle">请完善您的个人信息</text>
+      </view>
+
+      <view class="avatar-section">
+        <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+          <image class="avatar" src="{{tempUserInfo.avatarUrl || '/images/default-avatar.png'}}" mode="aspectFill" />
+          <view class="avatar-text" wx:if="{{!tempUserInfo.avatarUrl}}">点击选择头像</view>
+        </button>
+      </view>
+
+      <view class="form">
+        <input 
+          type="nickname" 
+          class="input"
+          placeholder="请输入昵称" 
+          value="{{tempUserInfo.nickName}}"
+          bindchange="onInputNickname"
+        />
+        <input 
+          type="number"
+          class="input"
+          placeholder="请输入手机号"
+          value="{{tempUserInfo.phone}}"
+          bindinput="onInputPhone"
+          maxlength="11"
+        />
+        <button 
+          class="submit-btn {{(tempUserInfo.avatarUrl && tempUserInfo.nickName && tempUserInfo.phone) ? 'active' : 'disabled'}}" 
+          bindtap="confirmLogin"
+          disabled="{{!tempUserInfo.avatarUrl || !tempUserInfo.nickName || !tempUserInfo.phone}}"
+        >
+          确认登录
+        </button>
+      </view>
+    </view>
+  </block>
+
+  <!-- 已登录状态 -->
+  <block wx:else>
+    <view class="user-section">
+      <image class="user-avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill"/>
+      <text class="user-name">{{userInfo.nickName}}</text>
+    </view>
+
+    <view class="menu-grid">
+      <view class="menu-item" bindtap="navigateToMeetings">
+        <view class="icon-wrapper meeting">
+          <text class="menu-icon">聚</text>
+        </view>
+        <text class="menu-text">聚会活动</text>
+      </view>
+      <view class="menu-item" bindtap="navigateToMembers">
+        <view class="icon-wrapper members">
+          <text class="menu-icon">会</text>
+        </view>
+        <text class="menu-text">会员列表</text>
+      </view>
+      <view class="menu-item" bindtap="navigateToAlbum">
+        <view class="icon-wrapper album">
+          <text class="menu-icon">相</text>
+        </view>
+        <text class="menu-text">相册分享</text>
+      </view>
+      <view class="menu-item" bindtap="navigateToProfile">
+        <view class="icon-wrapper profile">
+          <text class="menu-icon">我</text>
+        </view>
+        <text class="menu-text">个人中心</text>
+      </view>
+    </view>
+  </block>
+</view>

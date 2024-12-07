@@ -1,0 +1,140 @@
+.container {
+  padding: 30rpx;
+  background: #f6f6f6;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.title-section {
+  display: flex;
+  align-items: baseline;
+  gap: 12rpx;
+}
+
+.title {
+  font-size: 40rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+.count {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.create-btn {
+  font-size: 28rpx;
+  color: #4285f4;
+  background: rgba(66, 133, 244, 0.1);
+  padding: 12rpx 24rpx;
+  border-radius: 8rpx;
+  line-height: 1.5;
+}
+
+.album-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.album-item {
+  background: #fff;
+  border-radius: 12rpx;
+  overflow: hidden;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.06);
+}
+
+.album-content {
+  display: flex;
+  padding: 20rpx;
+  gap: 20rpx;
+}
+
+.album-cover {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 8rpx;
+  background: #f0f0f0;
+  flex-shrink: 0;
+}
+
+.album-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.album-title {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 12rpx;
+}
+
+.album-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #999;
+  margin-bottom: 16rpx;
+}
+
+.creator-info {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.creator-avatar {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+}
+
+.creator-name {
+  font-size: 26rpx;
+  color: #666;
+}
+
+.album-actions {
+  display: flex;
+  justify-content: center;
+  gap: 30rpx;
+  padding: 20rpx;
+  border-top: 1rpx solid #f5f5f5;
+}
+
+.action-btn {
+  min-width: 160rpx !important;
+  height: 64rpx;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  border-radius: 8rpx;
+}
+
+.action-btn.edit {
+  color: #4285f4;
+  background: rgba(66, 133, 244, 0.1);
+}
+
+.action-btn.delete {
+  color: #ff4d4f;
+  background: rgba(255, 77, 79, 0.1);
+}
+
+.empty-tip {
+  text-align: center;
+  padding: 60rpx 0;
+  color: #999;
+  font-size: 28rpx;
+} 

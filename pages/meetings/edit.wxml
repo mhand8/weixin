@@ -1,0 +1,78 @@
+<view class="container">
+  <view class="form">
+    <view class="form-item">
+      <text class="label">活动主题</text>
+      <input 
+        class="input" 
+        type="text" 
+        placeholder="请输入活动主题"
+        data-field="title"
+        bindinput="onInput"
+        value="{{formData.title}}"
+      />
+    </view>
+
+    <view class="form-item">
+      <text class="label">日期</text>
+      <picker 
+        mode="date" 
+        value="{{formData.date}}" 
+        start="{{currentDate}}"
+        bindchange="bindDateChange"
+      >
+        <view class="picker {{formData.date ? '' : 'placeholder'}}">
+          {{formData.date || '请选择日期'}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <text class="label">时间</text>
+      <picker 
+        mode="time" 
+        value="{{formData.time}}" 
+        bindchange="bindTimeChange"
+      >
+        <view class="picker {{formData.time ? '' : 'placeholder'}}">
+          {{formData.time || '请选择时间'}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <text class="label">地点</text>
+      <input 
+        class="input" 
+        type="text" 
+        placeholder="请输入活动地点"
+        data-field="location"
+        bindinput="onInput"
+        value="{{formData.location}}"
+      />
+    </view>
+
+    <view class="form-item">
+      <text class="label">活动原因</text>
+      <textarea 
+        class="textarea" 
+        placeholder="请输入活动原因"
+        data-field="reason"
+        bindinput="onInput"
+        value="{{formData.reason}}"
+      />
+    </view>
+
+    <view class="form-item">
+      <text class="label">备注</text>
+      <textarea 
+        class="textarea" 
+        placeholder="请输入备注信息（选填）"
+        data-field="notes"
+        bindinput="onInput"
+        value="{{formData.notes}}"
+      />
+    </view>
+
+    <button class="submit-btn" bindtap="submitEdit">保存修改</button>
+  </view>
+</view> 

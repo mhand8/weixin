@@ -1,0 +1,47 @@
+.container {
+  padding: 30rpx;
+}
+
+.form {
+  background: #fff;
+  border-radius: 12rpx;
+  padding: 30rpx;
+}
+
+.form-item {
+  margin-bottom: 30rpx;
+}
+
+.label {
+  display: block;
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.input, .picker {
+  border: 2rpx solid #eee;
+  padding: 20rpx;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+}
+
+.textarea {
+  border: 2rpx solid #eee;
+  padding: 20rpx;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  width: auto;
+  height: 160rpx;
+}
+
+.placeholder {
+  color: #999;
+}
+
+.submit-btn {
+  background: var(--primary-color);
+  color: #fff;
+  margin-top: 40rpx;
+  text-align: center;
+} 

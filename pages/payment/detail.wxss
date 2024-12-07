@@ -1,0 +1,92 @@
+.container {
+  padding: 30rpx;
+}
+
+.payment-detail {
+  background: #fff;
+  border-radius: 12rpx;
+  padding: 30rpx;
+}
+
+.amount-section {
+  text-align: center;
+  padding: 40rpx 0;
+  border-bottom: 2rpx solid #eee;
+}
+
+.label {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+  display: block;
+}
+
+.total-amount {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 20rpx 0;
+  display: block;
+}
+
+.per-person {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.member-section {
+  padding: 30rpx 0;
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  display: block;
+}
+
+.member-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.member-item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  background: #f8f8f8;
+  border-radius: 8rpx;
+}
+
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.name {
+  flex: 1;
+  font-size: 28rpx;
+}
+
+.status {
+  font-size: 26rpx;
+  color: #ff6b6b;
+}
+
+.status.paid {
+  color: #4caf50;
+}
+
+.pay-btn {
+  background: var(--primary-color);
+  color: #fff;
+  margin-top: 40rpx;
+}
+
+.pay-btn[disabled] {
+  background: #ccc !important;
+  color: #fff !important;
+} 

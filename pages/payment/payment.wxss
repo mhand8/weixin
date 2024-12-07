@@ -1,0 +1,117 @@
+.container {
+  padding: 30rpx;
+}
+
+.payment-form {
+  background: #fff;
+  border-radius: 12rpx;
+  padding: 30rpx;
+}
+
+.input-section {
+  margin-bottom: 40rpx;
+}
+
+.label {
+  display: block;
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.input {
+  border: 2rpx solid #eee;
+  padding: 20rpx;
+  border-radius: 8rpx;
+  font-size: 32rpx;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.selected-count {
+  font-size: 26rpx;
+  color: #666;
+}
+
+.member-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+  max-height: 600rpx;
+  overflow-y: auto;
+}
+
+.member-item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  border: 2rpx solid #eee;
+  border-radius: 8rpx;
+  transition: all 0.3s;
+}
+
+.member-item.selected {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.member-item.selected .name {
+  color: #fff;
+}
+
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.name {
+  flex: 1;
+  font-size: 28rpx;
+}
+
+.checkbox {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  border: 2rpx solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.result-section {
+  margin: 40rpx 0;
+  padding: 30rpx;
+  background: #f8f8f8;
+  border-radius: 8rpx;
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.amount {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.submit-btn {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.submit-btn[disabled] {
+  background: #ccc !important;
+  color: #fff !important;
+} 

@@ -1,0 +1,71 @@
+<view class="container">
+  <view class="meeting-detail">
+    <!-- 标题区域 -->
+    <view class="header">
+      <text class="title">{{meeting.title}}</text>
+    </view>
+
+    <!-- 基本信息区域 -->
+    <view class="info-section">
+      <view class="info-row">
+        <text class="iconfont icon-calendar"></text>
+        <text class="info-text">{{meeting.date}} {{meeting.time}}</text>
+      </view>
+      <view class="info-row">
+        <text class="iconfont icon-location"></text>
+        <text class="info-text">{{meeting.location}}</text>
+      </view>
+      <view class="info-row creator">
+        <image class="creator-avatar" src="{{meeting.creator.avatarUrl}}" mode="aspectFill"/>
+        <text class="creator-name">{{meeting.creator.nickName}}</text>
+        <text class="creator-tag">发起人</text>
+      </view>
+    </view>
+
+    <!-- 活动详情区域 -->
+    <view class="detail-section">
+      <view class="detail-block">
+        <text class="block-title">活动详情</text>
+        <text class="block-content">{{meeting.reason}}</text>
+      </view>
+
+      <view class="detail-block" wx:if="{{meeting.notes}}">
+        <text class="block-title">补充说明</text>
+        <text class="block-content">{{meeting.notes}}</text>
+      </view>
+    </view>
+
+    <!-- 参与成员区域 -->
+    <view class="members-section">
+      <text class="section-title">参与成员 <text class="count">({{meeting.participants.length || 0}})</text></text>
+      <view class="members-list">
+        <block wx:if="{{meeting.participants.length > 0}}">
+          <image 
+            class="member-avatar" 
+            wx:for="{{meeting.participants}}" 
+            wx:key="id"
+            src="{{item.avatarUrl}}"
+            mode="aspectFill"
+          />
+        </block>
+        <view class="empty-tip" wx:else>暂无成员参加</view>
+      </view>
+    </view>
+
+    <!-- 操作按钮区域 -->
+    <view class="action-section">
+      <button 
+        class="primary-btn {{isParticipant ? 'joined' : ''}}" 
+        bindtap="joinMeeting" 
+        disabled="{{isParticipant}}"
+      >
+        {{isParticipant ? '已参加' : '我要参加'}}
+      </button>
+
+      <view class="admin-actions" wx:if="{{isAdmin || isCreator}}">
+        <button class="action-btn edit" bindtap="editMeeting">编辑</button>
+        <button class="action-btn delete" bindtap="deleteMeeting">删除</button>
+      </view>
+    </view>
+  </view>
+</view> 

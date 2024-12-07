@@ -1,0 +1,35 @@
+<view class="container">
+  <view class="header">
+    <view class="title-section">
+      <text class="title">相册分享</text>
+      <text class="count">{{albums.length}}个相册</text>
+    </view>
+    <button class="create-btn" bindtap="createAlbum">新建相册</button>
+  </view>
+
+  <view class="album-list">
+    <block wx:if="{{albums.length > 0}}">
+      <view class="album-item" wx:for="{{albums}}" wx:key="id">
+        <view class="album-content" bindtap="viewAlbumDetail" data-id="{{item.id}}">
+          <image class="album-cover" src="{{item.coverUrl || '/images/default-cover.png'}}" mode="aspectFill"/>
+          <view class="album-info">
+            <text class="album-title">{{item.title}}</text>
+            <view class="album-meta">
+              <text class="photo-count">{{item.images.length}}张照片</text>
+              <text class="create-time">{{item.createTime}}</text>
+            </view>
+            <view class="creator-info">
+              <image class="creator-avatar" src="{{item.creator.avatarUrl}}" mode="aspectFill"/>
+              <text class="creator-name">{{item.creator.nickName}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="album-actions" wx:if="{{isAdmin || item.creator.nickName === userInfo.nickName}}">
+          <button class="action-btn edit" catchtap="editAlbum" data-id="{{item.id}}">编辑</button>
+          <button class="action-btn delete" catchtap="deleteAlbum" data-id="{{item.id}}">删除</button>
+        </view>
+      </view>
+    </block>
+    <view class="empty-tip" wx:else>暂无相册，点击右上角新建</view>
+  </view>
+</view> 

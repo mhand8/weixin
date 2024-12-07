@@ -1,0 +1,68 @@
+.container {
+  padding: 30rpx;
+}
+
+.auth-form {
+  background: #fff;
+  border-radius: 12rpx;
+  padding: 30rpx;
+}
+
+.form-title {
+  font-size: 34rpx;
+  font-weight: bold;
+  margin-bottom: 40rpx;
+  text-align: center;
+}
+
+.form-item {
+  margin-bottom: 30rpx;
+}
+
+.label {
+  display: block;
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.input {
+  border: 2rpx solid #eee;
+  padding: 20rpx;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+}
+
+.submit-btn {
+  background: var(--primary-color);
+  color: #fff;
+  margin-top: 40rpx;
+}
+
+.auth-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40rpx 0;
+}
+
+.status-icon {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20rpx;
+}
+
+.status-icon.approved {
+  background: #e8f5e9;
+  color: #4caf50;
+}
+
+.status-text {
+  font-size: 30rpx;
+  color: #333;
+} 

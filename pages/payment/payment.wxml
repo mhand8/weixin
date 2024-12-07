@@ -1,0 +1,50 @@
+<view class="container">
+  <view class="payment-form">
+    <view class="input-section">
+      <text class="label">总金额</text>
+      <input 
+        class="input" 
+        type="digit" 
+        placeholder="请输入总金额" 
+        value="{{amount}}"
+        bindinput="onAmountInput"
+      />
+    </view>
+
+    <view class="member-section">
+      <view class="section-header">
+        <text class="label">选择参与成员</text>
+        <text class="selected-count">已选 {{selectedMembers.length}} 人</text>
+      </view>
+
+      <view class="member-list">
+        <view 
+          class="member-item {{selectedMembers.includes(item._id) ? 'selected' : ''}}"
+          wx:for="{{members}}" 
+          wx:key="_id"
+          data-id="{{item._id}}"
+          bindtap="onMemberSelect"
+        >
+          <image class="avatar" src="{{item.avatar || '/images/default-avatar.png'}}"/>
+          <text class="name">{{item.name}}</text>
+          <view class="checkbox">
+            <mp-icon type="field" icon="done" size="{{16}}" color="{{selectedMembers.includes(item._id) ? '#fff' : 'transparent'}}"></mp-icon>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="result-section">
+      <view class="result-item">
+        <text class="label">每人应付</text>
+        <text class="amount">¥ {{perPersonAmount}}</text>
+      </view>
+    </view>
+
+    <button 
+      class="submit-btn" 
+      bindtap="startPayment"
+      disabled="{{!amount || selectedMembers.length === 0}}"
+    >发起收款</button>
+  </view>
+</view> 

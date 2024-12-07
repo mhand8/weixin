@@ -1,0 +1,38 @@
+<!--pages/members/members.wxml-->
+<view class="container">
+  <view class="header">
+    <text class="title">会员列表</text>
+    <text class="member-count">共{{members.length}}人</text>
+  </view>
+  
+  <view class="member-list">
+    <block wx:if="{{members.length > 0}}">
+      <view class="member-item" wx:for="{{members}}" wx:key="id">
+        <view class="member-main" bindtap="viewMemberDetail" data-id="{{item.id}}">
+          <view class="member-avatar">
+            <image src="{{item.avatarUrl || '/images/default-avatar.png'}}" mode="aspectFill"></image>
+          </view>
+          <view class="member-info">
+            <view class="info-row">
+              <text class="member-name">{{item.nickName}}</text>
+              <text class="member-status {{item.isAdmin ? 'admin' : ''}}">{{item.isAdmin ? '管理员' : '普通会员'}}</text>
+            </view>
+            <view class="member-phone" catchtap="makePhoneCall" data-phone="{{item.phone}}">
+              <text class="iconfont icon-phone"></text>
+              <text class="phone-text">{{item.phone}}</text>
+              <text class="phone-tip">点击拨打</text>
+            </view>
+            <view class="member-join-time">
+              <text class="iconfont icon-time"></text>
+              <text>{{item.createTime}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class="empty-tip" wx:else>
+      <image class="empty-icon" src="/images/empty.png"></image>
+      <text>暂无会员</text>
+    </view>
+  </view>
+</view>

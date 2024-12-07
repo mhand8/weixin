@@ -1,0 +1,42 @@
+<view class="container">
+  <view class="header">
+    <view class="album-info">
+      <text class="album-title">{{album.title}}</text>
+      <view class="album-meta">
+        <text class="photo-count">{{album.images.length}}张照片</text>
+        <text class="create-time">{{album.createTime}}</text>
+      </view>
+    </view>
+    <view class="creator-info">
+      <image class="creator-avatar" src="{{album.creator.avatarUrl}}" mode="aspectFill"/>
+      <text class="creator-name">{{album.creator.nickName}}</text>
+    </view>
+  </view>
+
+  <view class="photo-list">
+    <block wx:if="{{album.images.length > 0}}">
+      <view class="photo-wrapper" wx:for="{{album.images}}" wx:key="*this">
+        <image 
+          class="photo-item" 
+          src="{{item}}" 
+          mode="aspectFill"
+          bindtap="previewImage"
+          data-url="{{item}}"
+        />
+        <view class="photo-delete" wx:if="{{isAdmin || isCreator}}" catchtap="deletePhoto" data-index="{{index}}">
+          <text class="delete-icon">×</text>
+        </view>
+      </view>
+    </block>
+    <view class="empty-tip" wx:else>暂无照片</view>
+  </view>
+
+  <view class="action-bar">
+    <button class="action-btn add" bindtap="addPhotos">
+      <text class="btn-text">添加照片</text>
+    </button>
+    <button class="action-btn delete" bindtap="deleteAlbum" wx:if="{{isAdmin || isCreator}}">
+      <text class="btn-text">删除相册</text>
+    </button>
+  </view>
+</view> 

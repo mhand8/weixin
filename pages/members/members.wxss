@@ -1,0 +1,159 @@
+/* 引入字体图标 */
+@import "/styles/iconfont.wxss";
+
+.container {
+  padding: 30rpx;
+  background: #f7f8fa;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+.member-count {
+  font-size: 26rpx;
+  color: #999;
+  background: #fff;
+  padding: 8rpx 20rpx;
+  border-radius: 20rpx;
+}
+
+.member-list {
+  width: 100%;
+}
+
+.member-item {
+  background: #ffffff;
+  border-radius: 16rpx;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.member-item:active {
+  transform: scale(0.98);
+}
+
+.member-main {
+  padding: 24rpx;
+  display: flex;
+  align-items: flex-start;
+}
+
+.member-avatar {
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 24rpx;
+  flex-shrink: 0;
+  border-radius: 16rpx;
+  overflow: hidden;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+.member-avatar image {
+  width: 100%;
+  height: 100%;
+}
+
+.member-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.member-name {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+.member-status {
+  font-size: 22rpx;
+  padding: 4rpx 12rpx;
+  border-radius: 8rpx;
+  background: #f5f5f5;
+  color: #666;
+}
+
+.member-status.admin {
+  background: #e6f7ff;
+  color: #1890ff;
+}
+
+.member-phone {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  padding: 8rpx 16rpx;
+  background: #f8f8f8;
+  border-radius: 24rpx;
+  width: fit-content;
+}
+
+.phone-text {
+  font-size: 26rpx;
+  color: #1890ff;
+}
+
+.phone-tip {
+  font-size: 22rpx;
+  color: #999;
+  background: #fff;
+  padding: 2rpx 8rpx;
+  border-radius: 6rpx;
+}
+
+.member-join-time {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.iconfont {
+  font-size: 28rpx;
+}
+
+.icon-phone {
+  color: #1890ff;
+}
+
+.icon-time {
+  color: #999;
+}
+
+.empty-tip {
+  padding: 60rpx 0;
+  text-align: center;
+  color: #999;
+  font-size: 28rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20rpx;
+}
+
+.empty-icon {
+  width: 200rpx;
+  height: 200rpx;
+  opacity: 0.5;
+} 

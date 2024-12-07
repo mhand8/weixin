@@ -1,0 +1,30 @@
+<view class="container">
+  <view class="payment-detail">
+    <view class="amount-section">
+      <text class="label">总金额</text>
+      <text class="total-amount">¥ {{payment.amount}}</text>
+      <text class="per-person">每人 ¥{{payment.perPersonAmount}}</text>
+    </view>
+
+    <view class="member-section">
+      <text class="section-title">参与成员</text>
+      <view class="member-list">
+        <view class="member-item" wx:for="{{members}}" wx:key="_id">
+          <image class="avatar" src="{{item.avatar || '/images/default-avatar.png'}}"/>
+          <text class="name">{{item.name}}</text>
+          <text class="status {{payment.paidMembers.includes(item._id) ? 'paid' : ''}}">
+            {{payment.paidMembers.includes(item._id) ? '已支付' : '待支付'}}
+          </text>
+        </view>
+      </view>
+    </view>
+
+    <button 
+      class="pay-btn" 
+      bindtap="confirmPayment"
+      disabled="{{payment.paidMembers.includes(currentUser)}}"
+    >
+      {{payment.paidMembers.includes(currentUser) ? '已支付' : '确认支付'}}
+    </button>
+  </view>
+</view> 

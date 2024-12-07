@@ -1,0 +1,27 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/meetings/meetings",
+    "pages/meetings/publish",
+    "pages/meetings/detail",
+    "pages/meetings/edit",
+    "pages/meetings/my-meetings",
+    "pages/members/members",
+    "pages/album/album",
+    "pages/album/detail",
+    "pages/album/my-albums",
+    "pages/profile/profile"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "商丘在路上小队",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  },
+  "lazyCodeLoading": "requiredComponents"
+}
